@@ -89,6 +89,18 @@
 - 本リポジトリのソースコード・ノートブック: **MIT License** (`LICENSE` 参照)
 - 引用した公的統計データ: 各出典元の利用規約に従う
 
+## Copilot CLI で本リポジトリを使う方（再現する方）向け
+
+このリポジトリを clone して自分の環境で再現する場合、[`.github/copilot-instructions.md`](./.github/copilot-instructions.md) が **GitHub Copilot CLI の共通ルール** として自動読み込みされます。以下を含みます:
+
+- Jupyter MCP の動的接続手順（config file 方式が JupyterHub で失敗する回避策）
+- 分析前チェックリスト（問い / 予想 / 反証条件 / 出典）の必須化
+- 出典 URL・原数値ベース計算・分母定義注記のルール
+- AI クロスモデル検証（Fact-check + Rubber-duck）の実施方法
+- スライド埋め込み用グラフのデザイン規約（16:9 / Fluent palette / IPAexGothic）
+- デモディレクトリ構造とコミット規約
+- やってはいけないこと 6 箇条
+
 ## 免責
 
 デモ用の一部数値（特に DEMO 3 の都道府県別充足率）は **公開合成データ / デモ用近似値** を含みます。政策判断や学術発表に用いる場合は、必ず一次資料（私学事業団、e-Stat 等）で再検証してください。
