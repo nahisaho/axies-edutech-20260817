@@ -17,6 +17,8 @@
 | DEMO 3 | [`demo03_pref_heatmap/`](./demo03_pref_heatmap/) | 47 都道府県別ヒートマップ | Claude Opus 4.7 |
 | DEMO 4 | [`demo04_reverse_prompt/`](./demo04_reverse_prompt/) | 逆質問デモ (循環設計の自己批判) | Claude Opus 4.7 |
 | Review | [`review/`](./review/) | Fact-check / Rubber-duck review 結果 | GPT-5 系 (cross-model) |
+| Slides | [`assets/slides/`](./assets/slides/) | 講演スライド埋め込み用 PNG 図版 (8 枚, 16:9) | — |
+| Scripts | [`scripts/`](./scripts/) | 図版再生成スクリプト | — |
 
 ## 実験環境
 
@@ -45,6 +47,33 @@
 2. **`prompts.md`** — 使用した自然言語プロンプトの全記録
 3. **`notebook.ipynb`** — Copilot が生成・実行した Jupyter ノートブック
 4. **`RESULTS.md`** — 実行結果、予想との差分、fact-check メモ
+
+## スライド埋め込み用 図版
+
+講演スライド (16:9) にそのまま貼り付け可能なプレゼン最適化 PNG を [`assets/slides/`](./assets/slides/) に収録:
+
+| ファイル | 用途 | スライド |
+|---------|------|---------|
+| `slide09_bignum_hero.png` | 137→82 万人 大数字対比 | Slide 9 事実① |
+| `slide26_thumb_line.png` | 予想通り側 サムネ折れ線 | Slide 26 |
+| `slide28_demo1_hero.png` | DEMO 1 18 歳人口推移 (hero) | Slide 28 |
+| `slide28_delta_bars.png` | 減少ペース加速 棒グラフ | Slide 28 補助 |
+| `slide31_demo2_hero.png` | 進学率上昇で相殺 2 軸グラフ | Slide 31 |
+| `slide32_kpi_shingaku.png` | +7.6pt KPI 強調 | Slide 32 |
+| `slide34_demo3_hero.png` | 47 都道府県ヒートマップ (合成) | Slide 34 |
+| `slide37_demo4_hero.png` | 実データ vs 仮想線 | Slide 37 |
+
+**デザイン仕様**: Microsoft Fluent カラーパレット (`#0078D4` / `#107C10` / `#D13438` / `#FFB900`)、IPAexGothic フォント、DPI 180。
+**再生成**: `python scripts/generate_slide_charts.py`
+
+## クロスモデル品質検証
+
+すべてのデモは、実行 LLM (Claude Opus 4.7) とは異なるモデル (**GPT-5.6-Sol**) による Fact-check と Rubber-duck review を経ています。結果は [`review/`](./review/) 参照。
+
+| 検証 | 対象 | 主な指摘と反映 |
+|------|------|--------------|
+| Fact-check | 37 claims | 3 件 INCORRECT を検出 → 全件修正済（`+2.8% → +2.6%`, 「2007 生まれ → 2006 生まれが約 3 万人多」等）|
+| Rubber-duck | 5 Critical + 6 Important | Critical 全件対応済（DEMO 3 循環論証を「合成データによる可視化技術デモ」に再フレーミング等）|
 
 ## 出典
 
