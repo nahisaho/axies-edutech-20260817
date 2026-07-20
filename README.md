@@ -86,7 +86,9 @@
 
 ## ライセンス
 
-- 本リポジトリのソースコード・ノートブック: **MIT License** (`LICENSE` 参照)
+- 本リポジトリのコンテンツ全体（ノートブック・スクリプト・図・ドキュメント）: **Creative Commons 表示-非営利 4.0 国際 (CC BY-NC 4.0)** (`LICENSE` 参照 / https://creativecommons.org/licenses/by-nc/4.0/deed.ja )
+  - 利用条件: **表示** (クレジット表記) + **非営利** (商用利用不可)
+  - Copyright © 2026 nahisaho
 - 引用した公的統計データ: 各出典元の利用規約に従う
 
 ## Copilot CLI で本リポジトリを使う方（再現する方）向け
